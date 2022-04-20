@@ -1,0 +1,30 @@
+/*Normalize*/
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.mostrar{
+    color: white;
+    font-size: 70px;
+    align-items: center;
+}
+.oculto{
+    display:none;
+}
+
+div{
+    background-color: black;
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
