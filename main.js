@@ -1,7 +1,11 @@
+let contador = 0
 let comprobar = []
-const PLAYER1 = prompt('Ingrese su nombre')
 let numeros = [1,1,2,2,3,3]
 
+
+asignarJugador()
+
+/*Interacción Clicks*/
 
 document.querySelector('#start').onclick = function(){
     mezclar()
@@ -10,61 +14,75 @@ document.querySelector('#start').onclick = function(){
 
 document.querySelector('#carta--1').onclick = function(){
     let carta1 = document.querySelector('#p--1')
-    carta1.className = 'mostrar'
+    carta1.className = 'mostrar'    
     comprobar.push(carta1.textContent)
-    comprobarResultado()
-}
+    tiempo()}
 
 document.querySelector('#carta--2').onclick = function(){
     let carta2 = document.querySelector('#p--2')
-    carta2.className = 'mostrar'
+    carta2.className = 'mostrar'    
     comprobar.push(carta2.textContent)  
-    comprobarResultado()
+    
 
 }
 
 document.querySelector('#carta--3').onclick = function(){
     let carta1 = document.querySelector('#p--3')
     carta1.className = 'mostrar'
-    comprobar.push(carta1.textContent)
-    comprobarResultado()
+    comprobar.push(carta1.textContent)    
+    tiempo()
 }
 
 document.querySelector('#carta--4').onclick = function(){
     let carta1 = document.querySelector('#p--4')
     carta1.className = 'mostrar'
     comprobar.push(carta1.textContent)
-    comprobarResultado()
+    tiempo()
+}
+
+document.querySelector('#carta--5').onclick = function(){
+    let carta1 = document.querySelector('#p--5')
+    carta1.className = 'mostrar'
+    comprobar.push(carta1.textContent)
+    tiempo()
+}
+
+document.querySelector('#carta--6').onclick = function(){
+    let carta1 = document.querySelector('#p--6')
+    carta1.className = 'mostrar'
+    comprobar.push(carta1.textContent)
+    tiempo()
 }
 
 
+/*Funciones de comprobación, asignación y reinicio*/
 
-function comprobarResultado(){
-    resultado = []
-    if(comprobar.length === 2){
-        for(let i = 0; i < comprobar.length; i++){
-            resultado.push(comprobar[i])
-        }
-        if(comprobar[i] == resultado[i]){
+function comprobarResultado(){  
+
+    if(comprobar.length === 1){
+        rondas()
+    }
+
+            if(comprobar.length === 2 && comprobar[0] == comprobar[1]){
             asignarCorrecto()
-        }else{
-            document.querySelectorAll('p').forEach(function(item) {
+            reiniciarValorComprobar()
+            
+        }else if(comprobar.length === 2 && comprobar[0] != comprobar[1]){
+            document.querySelectorAll('.mostrar').forEach(function(item) {
                 item.className = 'oculto';
               })
-            
+              reiniciarValorComprobar()
         }
-    }
-     else if(comprobar.length > 3){
-        comprobar = []
-    }
-}
+    }     
 
-function reiniciar(){
-    
+
+function reiniciarValorComprobar(){
+    comprobar=[]
 }
 
 function asignarCorrecto(){
-    document.querySelectorAll('.mostrar').className = 'correcto'
+    document.querySelector('.mostrar').className = 'correcto'
+    document.querySelector('.mostrar').className = 'correcto'
 }
 
 function asignar(){
@@ -80,4 +98,19 @@ function asignar(){
 function mezclar(){
     numeros.sort(()=> Math.random() - 0.5)
     console.log(numeros)
+}
+
+
+function asignarJugador(){
+    let PLAYER1 = prompt('Ingrese su nombre')
+    document.querySelector('#player--1').textContent = PLAYER1
+}
+
+function rondas(){
+    contador++
+    document.querySelector('h2').textContent = contador
+}
+
+function tiempo(){
+    setTimeout(comprobarResultado, 2000);
 }
