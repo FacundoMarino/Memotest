@@ -1,6 +1,7 @@
 let contador = 0
 let comprobar = []
 let numeros = [1,1,2,2,3,3]
+let start = false
 
 
 asignarJugador()
@@ -8,6 +9,8 @@ asignarJugador()
 /*Interacción Clicks*/
 
 document.querySelector('#start').onclick = function(){
+    start = true
+    comprobarBotonStart()
     mezclar()
     asignar()
 }
@@ -59,15 +62,21 @@ document.querySelector('#carta--6').onclick = function(){
 
 function comprobarResultado(){  
 
-    if(comprobar.length === 1){
-        rondas()
-    }
+    // if(comprobar.length === 1){
+        
+    // }
 
-            if(comprobar.length === 2 && comprobar[0] == comprobar[1]){
+        if(comprobar.length === 2 && comprobar[0] == comprobar[1]){
             asignarCorrecto()
             reiniciarValorComprobar()
             
         }else if(comprobar.length === 2 && comprobar[0] != comprobar[1]){
+            document.querySelectorAll('.mostrar').forEach(function(item) {
+                item.className = 'oculto';
+              })
+              reiniciarValorComprobar()
+        }
+        else if(comprobar.length > 2){
             document.querySelectorAll('.mostrar').forEach(function(item) {
                 item.className = 'oculto';
               })
@@ -112,5 +121,13 @@ function rondas(){
 }
 
 function tiempo(){
-    setTimeout(comprobarResultado, 2000);
+    setTimeout(comprobarResultado, 100);
+}
+
+function comprobarBotonStart(){
+    if(start === true){
+        document.querySelector('#ocultar1').id = ''
+        document.querySelector('#ocultar2').id = ''
+    }
+
 }

@@ -4,7 +4,12 @@
     padding: 0px;
     margin: 0px;
 }
-
+#ocultar1{
+    display: none;
+}
+#ocultar2{
+    display: none;
+}
 .mostrar{
     color: white;
     font-size: 70px;
