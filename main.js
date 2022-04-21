@@ -6,6 +6,7 @@ let start = false
 
 asignarJugador()
 
+
 /*Interacción Clicks*/
 
 document.querySelector('#start').onclick = function(){
@@ -25,7 +26,7 @@ document.querySelector('#carta--2').onclick = function(){
     let carta2 = document.querySelector('#p--2')
     carta2.className = 'mostrar'    
     comprobar.push(carta2.textContent)  
-    
+    tiempo()
 
 }
 
@@ -62,10 +63,7 @@ document.querySelector('#carta--6').onclick = function(){
 
 function comprobarResultado(){  
 
-    // if(comprobar.length === 1){
-        
-    // }
-
+   
         if(comprobar.length === 2 && comprobar[0] == comprobar[1]){
             asignarCorrecto()
             reiniciarValorComprobar()
@@ -76,7 +74,7 @@ function comprobarResultado(){
               })
               reiniciarValorComprobar()
         }
-        else if(comprobar.length > 2){
+        else if(comprobar.length >= 2){
             document.querySelectorAll('.mostrar').forEach(function(item) {
                 item.className = 'oculto';
               })
@@ -92,6 +90,7 @@ function reiniciarValorComprobar(){
 function asignarCorrecto(){
     document.querySelector('.mostrar').className = 'correcto'
     document.querySelector('.mostrar').className = 'correcto'
+    comprobarVictoria()
 }
 
 function asignar(){
@@ -121,7 +120,7 @@ function rondas(){
 }
 
 function tiempo(){
-    setTimeout(comprobarResultado, 100);
+    setTimeout(comprobarResultado, 50);
 }
 
 function comprobarBotonStart(){
@@ -131,3 +130,12 @@ function comprobarBotonStart(){
     }
 
 }
+
+function comprobarVictoria(){
+let victoria = document.querySelectorAll('.correcto')
+    if(victoria.length === 6){
+        alert('Ganaste el Juego')
+    }
+}
+
+
