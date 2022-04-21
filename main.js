@@ -12,15 +12,17 @@ asignarJugador()
 document.querySelector('#start').onclick = function(){
     start = true
     comprobarBotonStart()
-    mezclar()
-    asignar()
+    mezclarCartas()
+    asignarCartas()
+    ocultarStart()
 }
 
 document.querySelector('#carta--1').onclick = function(){
     let carta1 = document.querySelector('#p--1')
     carta1.className = 'mostrar'    
     comprobar.push(carta1.textContent)
-    tiempo()}
+    tiempo()
+}
 
 document.querySelector('#carta--2').onclick = function(){
     let carta2 = document.querySelector('#p--2')
@@ -93,7 +95,7 @@ function asignarCorrecto(){
     comprobarVictoria()
 }
 
-function asignar(){
+function asignarCartas(){
         document.querySelector('#p--1').innerText = numeros[0]
         document.querySelector('#p--2').innerText = numeros[1]
         document.querySelector('#p--3').innerText = numeros[2]
@@ -103,7 +105,7 @@ function asignar(){
 }
 
 
-function mezclar(){
+function mezclarCartas(){
     numeros.sort(()=> Math.random() - 0.5)
     console.log(numeros)
 }
@@ -114,19 +116,17 @@ function asignarJugador(){
     document.querySelector('#player--1').textContent = PLAYER1
 }
 
-function rondas(){
-    contador++
-    document.querySelector('h2').textContent = contador
-}
-
 function tiempo(){
     setTimeout(comprobarResultado, 50);
 }
 
 function comprobarBotonStart(){
     if(start === true){
-        document.querySelector('#ocultar1').id = ''
-        document.querySelector('#ocultar2').id = ''
+        document.querySelector('#fila--cartas1').id = 'sect1'
+        document.querySelector('#fila--cartas2').id = 'sect2'
+    }else{
+        document.querySelector('#sect1').id = 'fila--cartas1'
+        document.querySelector('#sect2').id = 'fila--cartas2'
     }
 
 }
@@ -135,7 +135,45 @@ function comprobarVictoria(){
 let victoria = document.querySelectorAll('.correcto')
     if(victoria.length === 6){
         alert('Ganaste el Juego')
-    }
+        mostrarBotonVolverAJugar()        
+    }  
+    
 }
 
+/*Reiniciar juego*/
 
+function ocultarStart(){
+    document.querySelector('#start').className = 'oculto'
+}
+
+function mostrarStart(){
+    document.querySelector('#start').className = ''
+}
+
+/*Reinicio de Juego*/
+
+
+function mostrarBotonVolverAJugar(){
+    document.querySelector('#volver--a--jugar').className = ''
+}
+
+function ocultarBotonVolverAJugar(){
+    document.querySelector('#volver--a--jugar').className = 'oculto'
+}
+
+function reiniciarCorrectos(){
+    document.querySelectorAll('.correcto').forEach(function(item) {
+        item.className = 'oculto';
+      })
+    
+
+}
+
+document.querySelector('#volver--a--jugar').onclick = function(){
+    reiniciarValorComprobar()
+    reiniciarCorrectos()
+    ocultarBotonVolverAJugar()
+    start = false
+    comprobarBotonStart(start)
+    mostrarStart()
+}
