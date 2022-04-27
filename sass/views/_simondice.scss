@@ -1,0 +1,83 @@
+.red {
+    min-width: 130px;
+    height: 60px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;    
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+    background: red;
+    padding: 10px;
+    margin: 10px;
+  }
+  .red:hover {
+    background-color: #ed8080;
+  }
+
+  .yellow {
+    min-width: 130px;
+    height: 60px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;    
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+    background: yellow;
+    padding: 10px;
+    margin: 10px;
+  }
+  .yellow:hover {
+    background-color: #e2ed80;
+  }
+
+  .green {
+    min-width: 130px;
+    height: 60px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;    
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+    background: green;
+    padding: 10px;
+    margin: 10px;
+  }
+  .green:hover {
+    background-color: #8ded80;
+  }
+
+  .blue {
+    min-width: 130px;
+    height: 60px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;    
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+    background: blue;
+    padding: 10px;
+    margin: 10px;
+  }
+  .blue:hover {
+    background-color: #809ded;
+  }

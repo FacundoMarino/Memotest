@@ -1,0 +1,162 @@
+* {
+  padding: 0px;
+  margin: 0px; }
+
+body {
+  height: 100vh;
+  display: grid; }
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.mostrar {
+  color: white;
+  font-size: 70px;
+  text-align: center; }
+
+.oculto {
+  display: none; }
+
+.correcto {
+  background-color: gray;
+  color: gray;
+  font-size: 70px;
+  text-align: center; }
+
+h1 {
+  margin: 30px; }
+
+#start, #start--simon {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  background: #57cc99; }
+
+#start:hover {
+  background-color: #80ed99; }
+
+#start:active {
+  top: 2px; }
+
+#start--simon:hover {
+  background-color: #80ed99; }
+
+#start--simon:active {
+  top: 2px; }
+
+#fila--cartas1 {
+  display: none; }
+
+#fila--cartas2 {
+  display: none; }
+
+div {
+  background-color: black;
+  height: 100px;
+  width: 100px;
+  padding: 10px;
+  margin: 10px; }
+
+.red {
+  min-width: 130px;
+  height: 60px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  background: red;
+  padding: 10px;
+  margin: 10px; }
+
+.red:hover {
+  background-color: #ed8080; }
+
+.yellow {
+  min-width: 130px;
+  height: 60px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  background: yellow;
+  padding: 10px;
+  margin: 10px; }
+
+.yellow:hover {
+  background-color: #e2ed80; }
+
+.green {
+  min-width: 130px;
+  height: 60px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  background: green;
+  padding: 10px;
+  margin: 10px; }
+
+.green:hover {
+  background-color: #8ded80; }
+
+.blue {
+  min-width: 130px;
+  height: 60px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  background: blue;
+  padding: 10px;
+  margin: 10px; }
+
+.blue:hover {
+  background-color: #809ded; }
+
+#fila--cartas1 {
+  display: none; }
+
+#fila--cartas2 {
+  display: none; }
+
+div {
+  background-color: black;
+  height: 100px;
+  width: 100px;
+  padding: 10px;
+  margin: 10px; }

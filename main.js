@@ -1,6 +1,6 @@
 let contador = 0
 let comprobar = []
-let numeros = [1,1,2,2,3,3]
+let numerosEnCartas = [1,1,2,2,3,3]
 let start = false
 
 
@@ -96,24 +96,24 @@ function asignarCorrecto(){
 }
 
 function asignarCartas(){
-        document.querySelector('#p--1').innerText = numeros[0]
-        document.querySelector('#p--2').innerText = numeros[1]
-        document.querySelector('#p--3').innerText = numeros[2]
-        document.querySelector('#p--4').innerText = numeros[3]
-        document.querySelector('#p--5').innerText = numeros[4]
-        document.querySelector('#p--6').innerText = numeros[5]
+        document.querySelector('#p--1').innerText = numerosEnCartas[0]
+        document.querySelector('#p--2').innerText = numerosEnCartas[1]
+        document.querySelector('#p--3').innerText = numerosEnCartas[2]
+        document.querySelector('#p--4').innerText = numerosEnCartas[3]
+        document.querySelector('#p--5').innerText = numerosEnCartas[4]
+        document.querySelector('#p--6').innerText = numerosEnCartas[5]
 }
 
 
 function mezclarCartas(){
-    numeros.sort(()=> Math.random() - 0.5)
-    console.log(numeros)
+    numerosEnCartas.sort(()=> Math.random() - 0.5)
+    console.log(numerosEnCartas)
 }
 
 
 function asignarJugador(){
     let PLAYER1 = prompt('Ingrese su nombre')
-    document.querySelector('#player--1').textContent = PLAYER1
+    document.querySelector('.player--1').textContent = PLAYER1
 }
 
 function tiempo(){
@@ -150,8 +150,6 @@ function mostrarStart(){
     document.querySelector('#start').className = ''
 }
 
-/*Reinicio de Juego*/
-
 
 function mostrarBotonVolverAJugar(){
     document.querySelector('#volver--a--jugar').className = ''
@@ -177,3 +175,11 @@ document.querySelector('#volver--a--jugar').onclick = function(){
     comprobarBotonStart(start)
     mostrarStart()
 }
+
+
+/*Simon Dice*/
+
+let coloresDeBotones = []
+
+/*BOTONES*/
+

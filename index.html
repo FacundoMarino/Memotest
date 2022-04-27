@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css"/>
-        <title>Memotest</title>
+    <link rel="stylesheet" href="css/index.css"/>
+        <title>Memotest</title> 
 </head>
 <body>
-    <h1 class="flex">Bienvenido: <strong id="player--1"></strong></h1>
+    <!-- MEMOTEST -->
+    <h1 class="flex">Bienvenido: <strong class="player--1"></strong></h1>
     <section class="flex" id="fila--cartas1">
         
         <div id="carta--1">
@@ -39,9 +40,27 @@
         <button type="button" id="volver--a--jugar" class="oculto">Volver a Jugar</button>
     </section>
 
-    <section class="flex">
-        <h2></h2>
-    </section>
+
+    <!-- SIMON DICE -->
+
+    <p class="flex">Simon Dice<strong id="player--1"></strong></p>
+        <section class="flex" id="fila--botones1">
+            
+
+            <button type="button" id="color--1" class="red"></button>
+            <button type="button" id="color--2" class="yellow"></button>
+            
+             
+        </section>
+        <section class="flex" id="fila--botones2" >
+            <button type="button" id="color--3" class="green"></button>
+            <button type="button" id="color--4" class="blue"></button>
+         </section>
+
+         <section class="flex">
+            <button type="button" id="start--simon">Start</button>
+            <button type="button" id="volver--a--jugar--simon" class="oculto">Volver a Jugar</button>
+        </section>
 
     
     <script src="main.js"></script>

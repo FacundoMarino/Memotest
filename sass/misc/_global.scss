@@ -1,0 +1,62 @@
+body{
+    height: 100vh;
+    display: grid;
+
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.mostrar{
+    color: white;
+    font-size: 70px;
+    text-align: center;
+}
+.oculto{
+    display:none;
+}
+
+.correcto{
+    background-color: gray;
+    color: gray;
+    font-size: 70px;
+    text-align: center;
+}
+
+h1{
+    margin: 30px;
+}
+
+#start, #start--simon {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;    
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+    background: #57cc99;
+  }
+  #start:hover {
+    background-color: #80ed99;
+  }
+  #start:active {
+    top: 2px;
+  }
+
+ #start--simon:hover {
+    background-color: #80ed99;
+  }
+
+ #start--simon:active {
+    top: 2px;
+  }
