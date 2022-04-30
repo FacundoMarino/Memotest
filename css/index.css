@@ -28,7 +28,7 @@ body {
 h1 {
   margin: 30px; }
 
-#start, #start--simon {
+#start, #start--simon, #entregar--simon {
   min-width: 130px;
   height: 40px;
   color: #fff;
@@ -68,7 +68,14 @@ div {
   padding: 10px;
   margin: 10px; }
 
-.red {
+.blink_me {
+  animation: blinker 2s; }
+
+@keyframes blinker {
+  50% {
+    opacity: 0; } }
+
+#color--1 {
   min-width: 130px;
   height: 60px;
   color: #fff;
@@ -85,10 +92,10 @@ div {
   padding: 10px;
   margin: 10px; }
 
-.red:hover {
+#color--1:hover {
   background-color: #ed8080; }
 
-.yellow {
+#color--2 {
   min-width: 130px;
   height: 60px;
   color: #fff;
@@ -105,10 +112,10 @@ div {
   padding: 10px;
   margin: 10px; }
 
-.yellow:hover {
+#color--2:hover {
   background-color: #e2ed80; }
 
-.green {
+#color--3 {
   min-width: 130px;
   height: 60px;
   color: #fff;
@@ -125,10 +132,10 @@ div {
   padding: 10px;
   margin: 10px; }
 
-.green:hover {
+#color--3:hover {
   background-color: #8ded80; }
 
-.blue {
+#color--4 {
   min-width: 130px;
   height: 60px;
   color: #fff;
@@ -145,8 +152,14 @@ div {
   padding: 10px;
   margin: 10px; }
 
-.blue:hover {
+#color--4:hover {
   background-color: #809ded; }
+
+#fila--botones1 {
+  display: none; }
+
+#fila--botones2 {
+  display: none; }
 
 #fila--cartas1 {
   display: none; }
@@ -160,3 +173,10 @@ div {
   width: 100px;
   padding: 10px;
   margin: 10px; }
+
+.blink_me {
+  animation: blinker 2s; }
+
+@keyframes blinker {
+  50% {
+    opacity: 0; } }
