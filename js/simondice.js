@@ -1,75 +1,30 @@
 /*Simon Dice*/
-let $botonRed = document.querySelector('.red')
-let $botonYellow = document.querySelector('.yellow')
-let $botonGreen = document.querySelector('.green')
-let $botonBlue = document.querySelector('.blue')
-
 let startSimon = false
-let coloresDeBotones = ['red','yellow','blue','yellow']
 let secuenciaMaquina = []
 let secuenciaJugador = []
+let ronda = 0
 
 /*BOTONES*/
 
-
-
-document.querySelector('.red').onclick = function(){
-    secuenciaJugador.push('red')
-}
-
-document.querySelector('.yellow').onclick = function(){
-    secuenciaJugador.push('yellow')
-}
-
-document.querySelector('.green').onclick = function(){
-    secuenciaJugador.push('green')
-}
-
-document.querySelector('.blue').onclick = function(){
-    secuenciaJugador.push('blue')
-}
 
 document.querySelector('#start--simon').onclick = function(){
     startSimon = true
     comprobarBotonStartSimon()
     ocultarStart()
-    turnoMaquina()
+    reiniciar()
+    organizadorRonda()
 }
 
-document.querySelector('#entregar--simon').onclick = function(){
-    corroborarAcierto()
-}
 
 /*Secuencia de Botones*/
 
 
-
-
 function mezclarColores(){
-    coloresDeBotones.sort(()=> Math.random() - 0.5)
-    console.log(coloresDeBotones)
+    const $botones = document.querySelectorAll('.button')
+    const indice = Math.floor(Math.random() * $botones.length)
+    return $botones[indice]
 }
 
-// function asignarSecuenciaMaquina(){
-//     secuenciaMaquina.push(coloresDeBotones[0])
-// }
-
-function mostrarSecuencia(){
-    for(let i = 0; i < coloresDeBotones.length; i++){
-        if(coloresDeBotones[i] === 'red'){
-            setTimeout($botonRed.className = 'blink_me', 100)
-        }
-        else if(coloresDeBotones[i] === 'yellow'){
-            setTimeout($botonYellow.className = 'blink_me', 100)
-        }
-        else if(coloresDeBotones[i] === 'green'){
-            setTimeout($botonGreen.className = 'blink_me', 100)
-        }
-        else if(coloresDeBotones[i] === 'blue'){
-            setTimeout($botonBlue.className = 'blink_me', 100)
-        }
-    }
-}
 
 function comprobarBotonStartSimon(){
     if(startSimon === true){
@@ -82,16 +37,6 @@ function comprobarBotonStartSimon(){
 
 }
 
-
-function corroborarAcierto(){
-
-    for(let i = 0; i < secuenciaMaquina.length; i++){
-
-        if(secuenciaMaquina[i] === secuenciaJugador[i]){
-            
-        }
-    }
-}
 
 function ocultarStart(){
     document.querySelector('#start--simon').className = 'oculto'
@@ -112,6 +57,10 @@ function activarBotonesJugador(){
         item.disabled = false;
       })
 
+    document.querySelectorAll('.button').forEach(function(item) {
+        item.onclick = turnoJugador;
+      })
+
 }
 
 function monstrarBotonEntregar(){
@@ -124,14 +73,74 @@ function ocultarBotonEntregar(){
 
 
 
-function turnoMaquina(){
+function organizadorRonda(){
     desactivarBotonesMaquina()
-    mezclarColores()    
-    mostrarSecuencia()
-    turnoJugador()
+    
+    
+
+    const $nuevoColor = mezclarColores()
+    secuenciaMaquina.push($nuevoColor)
+
+    const tiempoParaJugador = (secuenciaMaquina + 1) * 1000
+
+    secuenciaMaquina.forEach(function(elemento, index){
+        const retrasoMaquina = (index + 1) * 1000
+        setTimeout(function(){
+            resaltar(elemento)
+        }, retrasoMaquina)  
+          
+    })
+
+    setTimeout(function(){
+        activarBotonesJugador()
+    }, tiempoParaJugador)
+
+    secuenciaJugador = []
+    ronda++
+    actualizoRonda()
+        
 }
 
-function turnoJugador(){
-    activarBotonesJugador()
-    monstrarBotonEntregar()
+function turnoJugador(e){
+    const $boton = e.target
+    resaltar($boton)
+    secuenciaJugador.push($boton)
+
+    const $colorMaquina = secuenciaMaquina[secuenciaMaquina.length -1]
+    if($boton.id !== $colorMaquina.id){
+        perder()
+        return
+    }
+
+    if(secuenciaJugador.length === secuenciaMaquina.length){
+        desactivarBotonesMaquina()
+        setTimeout(organizadorRonda, 1000)
+    }
+}
+
+
+function resaltar($boton){
+    $boton.style.opacity = 1;
+    setTimeout(function(){
+        $boton.style.opacity = 0.5
+    }, 500)
+}
+
+function reiniciar(){
+    secuenciaJugador = []
+    secuenciaMaquina = []
+}
+
+function actualizoRonda(){
+   let $pRonda = document.querySelector('#ronda')
+    $pRonda.textContent = ronda
+}
+
+function perder(){
+    alert('UPS te confundiste')
+    monstrarBotonVolverEmpezar()
+}
+
+function monstrarBotonVolverEmpezar(){
+    document.querySelector('#volver--a--jugar--simon').className = ''
 }
