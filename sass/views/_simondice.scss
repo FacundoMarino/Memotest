@@ -1,4 +1,4 @@
-.red {
+#color--1 {
     min-width: 130px;
     height: 60px;
     color: #fff;
@@ -15,11 +15,8 @@
     padding: 10px;
     margin: 10px;
   }
-  .red:hover {
-    background-color: #ed8080;
-  }
 
-  .yellow {
+  #color--2 {
     min-width: 130px;
     height: 60px;
     color: #fff;
@@ -36,11 +33,9 @@
     padding: 10px;
     margin: 10px;
   }
-  .yellow:hover {
-    background-color: #e2ed80;
-  }
 
-  .green {
+
+  #color--3 {
     min-width: 130px;
     height: 60px;
     color: #fff;
@@ -57,11 +52,9 @@
     padding: 10px;
     margin: 10px;
   }
-  .green:hover {
-    background-color: #8ded80;
-  }
 
-  .blue {
+
+  #color--4 {
     min-width: 130px;
     height: 60px;
     color: #fff;
@@ -78,6 +71,13 @@
     padding: 10px;
     margin: 10px;
   }
-  .blue:hover {
-    background-color: #809ded;
-  }
+
+
+
+    #fila--botones1{
+        display: none;
+}
+    #fila--botones2{
+        display: none;
+}
+
