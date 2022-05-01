@@ -177,9 +177,3 @@ document.querySelector('#volver--a--jugar').onclick = function(){
 }
 
 
-/*Simon Dice*/
-
-let coloresDeBotones = []
-
-/*BOTONES*/
-
