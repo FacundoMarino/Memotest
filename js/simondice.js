@@ -10,6 +10,7 @@ document.querySelector('#start--simon').onclick = function(){
     startSimon = true
     comprobarBotonStartSimon()
     ocultarStart()
+    mostrarRonda()
     reiniciar()
     organizadorRonda()
 }
@@ -90,7 +91,7 @@ function organizadorRonda(){
     secuenciaJugador = []
     ronda++
     actualizoRonda()
-    verificarRonda()
+    verificarRondaGanada()
 }
 
 function turnoJugador(e){
@@ -123,9 +124,19 @@ function reiniciar(){
     secuenciaMaquina = []
 }
 
+function mostrarRonda(){
+    let $pRonda = document.querySelector('#ronda')
+    $pRonda.className = ''
+}
+
 function actualizoRonda(){
    let $pRonda = document.querySelector('#ronda')
     $pRonda.textContent = ronda
+}
+
+function ocultarRonda(){
+    let $pRonda = document.querySelector('#ronda')
+    $pRonda.className = 'oculto'
 }
 
 function perder(){
@@ -134,17 +145,15 @@ function perder(){
     reiniciarJuego()
 }
 
-function monstrarBotonVolverEmpezar(){
-    document.querySelector('#volver--a--jugar--simon').className = ''
-}
-
 function reiniciarJuego(){
     startSimon = false
     ronda = 0
+    ocultarRonda()
     comprobarBotonStartSimon()
+    mostrarStart()
 }
 
-function verificarRonda(){
+function verificarRondaGanada(){
     if(ronda === 6){
         alert('¡Felicitaciones ganaste el Juego!')
         reiniciarJuego()
