@@ -4,8 +4,7 @@ let secuenciaMaquina = []
 let secuenciaJugador = []
 let ronda = 0
 
-/*BOTONES*/
-
+/* Start */
 
 document.querySelector('#start--simon').onclick = function(){
     startSimon = true
@@ -41,7 +40,9 @@ function comprobarBotonStartSimon(){
 function ocultarStart(){
     document.querySelector('#start--simon').className = 'oculto'
 }
-
+function mostrarStart(){
+    document.querySelector('#start--simon').className = ''
+}
 
 function desactivarBotonesMaquina(){
 
@@ -62,15 +63,6 @@ function activarBotonesJugador(){
       })
 
 }
-
-function monstrarBotonEntregar(){
-    document.querySelector('#entregar--simon').className = ''
-}
-
-function ocultarBotonEntregar(){
-    document.querySelector('#entregar--simon').className = 'oculto'
-}
-
 
 
 function organizadorRonda(){
@@ -98,7 +90,7 @@ function organizadorRonda(){
     secuenciaJugador = []
     ronda++
     actualizoRonda()
-        
+    verificarRonda()
 }
 
 function turnoJugador(e){
@@ -106,7 +98,7 @@ function turnoJugador(e){
     resaltar($boton)
     secuenciaJugador.push($boton)
 
-    const $colorMaquina = secuenciaMaquina[secuenciaMaquina.length -1]
+    const $colorMaquina = secuenciaMaquina[secuenciaJugador.length -1]
     if($boton.id !== $colorMaquina.id){
         perder()
         return
@@ -138,9 +130,24 @@ function actualizoRonda(){
 
 function perder(){
     alert('UPS te confundiste')
-    monstrarBotonVolverEmpezar()
+    mostrarStart()
+    reiniciarJuego()
 }
 
 function monstrarBotonVolverEmpezar(){
     document.querySelector('#volver--a--jugar--simon').className = ''
+}
+
+function reiniciarJuego(){
+    startSimon = false
+    ronda = 0
+    comprobarBotonStartSimon()
+}
+
+function verificarRonda(){
+    if(ronda === 6){
+        alert('¡Felicitaciones ganaste el Juego!')
+        reiniciarJuego()
+
+    }
 }

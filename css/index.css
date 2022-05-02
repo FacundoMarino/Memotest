@@ -92,8 +92,6 @@ div {
   padding: 10px;
   margin: 10px; }
 
-
-
 #color--2 {
   min-width: 130px;
   height: 60px;
@@ -110,8 +108,6 @@ div {
   background: yellow;
   padding: 10px;
   margin: 10px; }
-
-
 
 #color--3 {
   min-width: 130px;
@@ -130,8 +126,6 @@ div {
   padding: 10px;
   margin: 10px; }
 
-
-
 #color--4 {
   min-width: 130px;
   height: 60px;
@@ -149,13 +143,20 @@ div {
   padding: 10px;
   margin: 10px; }
 
-
-
 #fila--botones1 {
   display: none; }
 
 #fila--botones2 {
   display: none; }
+
+#player--1 {
+  font-size: 80px;
+  font-weight: bold; }
+
+.button {
+  height: 200px;
+  opacity: 0.5;
+  transition: 500ms; }
 
 #fila--cartas1 {
   display: none; }
@@ -170,8 +171,9 @@ div {
   padding: 10px;
   margin: 10px; }
 
-.button{
-  height: 200px;
-  opacity: 0.5;
-  transition: opacity 500ms;
-}
+.blink_me {
+  animation: blinker 2s; }
+
+@keyframes blinker {
+  50% {
+    opacity: 0; } }

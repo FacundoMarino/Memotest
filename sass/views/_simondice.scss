@@ -32,6 +32,7 @@
     background: yellow;
     padding: 10px;
     margin: 10px;
+    
   }
 
 
@@ -81,3 +82,13 @@
         display: none;
 }
 
+#player--1{
+  font-size: 80px;
+  font-weight: bold;
+}
+
+.button{
+  height: 200px;
+  opacity: 0.5;
+  transition: 500ms;
+}
