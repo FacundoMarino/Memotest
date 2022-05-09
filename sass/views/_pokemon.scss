@@ -1,0 +1,43 @@
+#pokemon{
+
+    justify-content: space-evenly;
+    align-items: center;
+
+    #charmander{
+        height: 100px;
+    }
+    #squirtle{
+        height: 100px;}
+    
+    #bulbasaur{
+        height: 100px;
+    }
+
+    #charmander--pokemon{
+        height: 100px;
+        opacity: 0.7;
+        transition: 100ms;
+    }
+    #squirtle--pokemon{
+        height: 100px;
+        opacity: 0.7;
+        transition: 100ms;
+    }
+    #bulbasaur--pokemon{
+        height: 100px;
+        opacity: 0.7;
+        transition: 100ms;
+    }
+
+}
+
+#batalla{
+    grid-template-columns:repeat(2, 1fr);
+    grid-template-rows:repeat(2, 1fr);
+    justify-items: center;
+    align-items: stretch;
+
+    img{
+        height: 200px;
+    }
+}

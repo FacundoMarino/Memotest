@@ -157,6 +157,14 @@ function verificarRondaGanada(){
     if(ronda === 6){
         alert('¡Felicitaciones ganaste el Juego!')
         reiniciarJuego()
+        juegosGanados++
+        comprobarJuegosGanadas(juegosGanados)
 
+    }
+}
+
+function comprobarJuegosGanadas(juegosGanados){
+    if(juegosGanados === 2){
+        mostrarJuegoPokemon()
     }
 }

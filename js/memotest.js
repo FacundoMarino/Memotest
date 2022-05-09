@@ -2,6 +2,8 @@ let contador = 0
 let comprobar = []
 let numerosEnCartas = [1,1,2,2,3,3]
 let start = false
+let juegosGanados = 0
+
 
 
 asignarJugador()
@@ -135,7 +137,9 @@ function comprobarVictoria(){
 let victoria = document.querySelectorAll('.correcto')
     if(victoria.length === 6){
         alert('Ganaste el Juego')
-        mostrarBotonVolverAJugar()        
+        mostrarBotonVolverAJugar()
+        juegosGanados++
+        comprobarJuegosGanadas(juegosGanados)        
     }  
     
 }
