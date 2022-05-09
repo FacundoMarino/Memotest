@@ -87,7 +87,7 @@ document.querySelector('#squirtle').onclick = function(){
 
 
 
-/*Funciones*/
+/*Funciones */
 
 function mezclarEleccionMaquina(){
   let mezcla = piedraPapelTijera.sort(()=> Math.random() - 0.5)
