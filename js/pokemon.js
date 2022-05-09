@@ -13,7 +13,7 @@ class Pokemon{
           this.dificultadDeAtrapar = dificultadDeAtrapar
           this.descripcion = descripcion
         }        
-    }
+      }
   
 const descripcionPokemon = {
   pikachu: 'Los miembros de esta especie se saludan entre sí uniendo sus colas y transmitiéndose corriente eléctrica.',
@@ -143,3 +143,4 @@ function mostrarJuegoPokemon(){
   let $section = document.querySelector('#pokemon')
   $section.className = 'flex'
 }
+
