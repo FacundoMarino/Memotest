@@ -32,12 +32,201 @@
 }
 
 #batalla{
-    grid-template-columns:repeat(2, 1fr);
+
+
+    grid-template-columns:repeat(6, 1fr);
     grid-template-rows:repeat(2, 1fr);
     justify-items: center;
-    align-items: stretch;
+    align-items: center;
 
     img{
         height: 200px;
     }
+
+    #papel{    
+
+        grid-column: 3/4;
+        grid-row: 2/3;
+        
+            min-width: 130px;
+            height: 40px;
+            color: #fff;
+            padding: 5px 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            
+            outline: none;
+            border-radius: 5px;
+            border: none;
+            box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+            background: #212529;
+           z-index: 1;
+          }
+          #papel:hover:after {
+            width: 100%;
+            left: 0;
+          }
+          #papel:after {
+            border-radius: 5px;
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 100%;
+            top: 0;
+            z-index: -1;
+            box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+            transition: all 0.3s ease;
+            background-color: #343a40;
+            right: 0;
+          }
+          #papel:active {
+            top: 2px;
+          }
+    
+    #piedra{        
+
+        grid-column: 4/5;
+        grid-row: 2/3;
+            min-width: 130px;
+            height: 40px;
+            color: #fff;
+            padding: 5px 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;            
+            outline: none;
+            border-radius: 5px;
+            border: none;
+            box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+            background: #adb5bd;
+           z-index: 1;
+          }
+          #piedra:hover:after {
+            width: 100%;
+            left: 0;
+          }
+          #piedra:after {
+            border-radius: 5px;
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 100%;
+            top: 0;
+            z-index: -1;
+            box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+            transition: all 0.3s ease;
+            background-color: #ced4da;
+            right: 0;
+          }
+          #piedra:active {
+            top: 2px;
+          }
+
+
+    #tijera{
+
+        grid-column: 5/6;
+        grid-row: 2/3;
+            min-width: 130px;
+            height: 40px;
+            color: #fff;
+            padding: 5px 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;            
+            outline: none;
+            border-radius: 5px;
+            border: none;
+            box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+            background: #4433ff;
+           z-index: 1;
+          }
+          #tijera:hover:after {
+            width: 100%;
+            left: 0;
+          }
+          #tijera:after {
+            border-radius: 5px;
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 100%;
+            top: 0;
+            z-index: -1;
+            box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+            transition: all 0.3s ease;
+            background-color: #3a86ff;
+            right: 0;
+          }
+          #tijera:active {
+            top: 2px;
+          }
+
+   #back--charmander{
+            grid-column: 2/3;  
+            grid-row: 2/3;
+          }
+
+    #back--squirtle{
+            grid-column: 2/3;  
+            grid-row: 2/3;
+          }
+
+    #back--bulbasaur{
+            grid-column: 2/3;  
+            grid-row: 2/3;
+          }
+
+    #front--pikachu{
+      grid-column: 4/5;  
+      grid-row: 1/2;
+    }
+
+    #front--gengar{
+      grid-column: 4/5;  
+      grid-row: 1/2;
+    }
+
+    #front--mew{
+      grid-column: 4/5;  
+      grid-row: 1/2;
+    }
+
+    #front--mewtwo{
+      grid-column: 4/5;  
+      grid-row: 1/2;
+    }
+
+    #vida--total{
+      height: 30px;
+      grid-column: 3/4;
+      grid-row: 1/2;
+      opacity: 0;
+    transition: 500ms;
+    }
+
+    #vida--media{
+      height: 30px;
+      grid-column: 3/4;
+      grid-row: 1/2;
+      opacity: 0;
+    transition: 500ms;
+    }
+
+    #vida--baja{
+      height: 30px;
+      grid-column: 3/4;
+      grid-row: 1/2;
+      opacity: 0;
+    transition: 500ms;
+    }
+
 }
+
+
+
+
