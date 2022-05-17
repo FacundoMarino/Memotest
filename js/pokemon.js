@@ -7,8 +7,9 @@ let $pikachu = document.querySelector('#front--pikachu')
 let $gengar = document.querySelector('#front--gengar')
 let $mew = document.querySelector('#front--mew')
 let $mewtwo = document.querySelector('#front--mewtwo')
+let $resultadoMaquina = document.querySelector('#seleccion--maquina')
 
-
+let pokemonsEnPokedex = []
 let vidaJugador = 3
 let rondaDeVida = 0
 let pokemonElegido = ''
@@ -19,23 +20,24 @@ let eleccionMaquina = []
 
 /*BOTONES*/
 
-document.querySelector('#piedra').onclick = function(){
-  comprobarPelea()  
+document.querySelector('#piedra').onclick = function(){  
+  reiniciarElecciones()
   eleccionJugador.push('piedra')
-  comprobarPelea()    
+  manejoDeRonda()
+  
 }
 
 document.querySelector('#papel').onclick = function(){
-  comprobarPelea()
+  reiniciarElecciones()
   eleccionJugador.push('papel')
-  comprobarPelea()
+  manejoDeRonda()
   
 }
 
 document.querySelector('#tijera').onclick = function(){
-  comprobarPelea()
+  reiniciarElecciones()
   eleccionJugador.push('tijera')
-  comprobarPelea()
+  manejoDeRonda()
   
 }
 
@@ -61,34 +63,44 @@ function pelea(){
   if(eleccionMaquina[0] === 'piedra' && eleccionJugador[0] === 'papel'){
     victoria++
     rondaDeVida++
-    bajarVidaMaquina()     
+    mostrarResultadoMaquina()
+    bajarVidaMaquina()
   }
   else if(eleccionMaquina[0] === 'papel' && eleccionJugador[0] === 'tijera'){
     victoria++
     rondaDeVida++
-    console.log('jugador gana')
-    bajarVidaMaquina()   
+    mostrarResultadoMaquina()   
+    bajarVidaMaquina()
   }
   else if(eleccionMaquina[0] === 'tijera' && eleccionJugador[0] === 'piedra'){
     victoria++
     rondaDeVida++
-    console.log('jugador gana')
-    bajarVidaMaquina()   
+    mostrarResultadoMaquina()  
+    bajarVidaMaquina()
+     
   }
   else if(eleccionMaquina[0] === eleccionJugador[0]){    
+    mostrarResultadoMaquina()
     alert('Empate')
+    
   }
   else if(eleccionMaquina[0] === 'papel' && eleccionJugador[0] === 'piedra'){
     vidaJugador--
-    alert('Ganó la Máquina')      
+    mostrarResultadoMaquina()
+    alert('Ganó la Máquina')
+          
   }
   else if(eleccionMaquina[0] === 'tijera' && eleccionJugador[0] === 'papel'){
     vidaJugador--
-    alert('Ganó la Máquina') 
+    mostrarResultadoMaquina()
+    alert('Ganó la Máquina')
+   
   }
   else if(eleccionMaquina[0] === 'piedra' && eleccionJugador[0] === 'tijera'){
     vidaJugador--
-    alert('Ganó la Máquina') 
+    mostrarResultadoMaquina()
+    alert('Ganó la Máquina')
+    
   } 
 }
 
@@ -154,16 +166,17 @@ function mostrarJuegoPokemon(){
 
 
 
-function manejoDeRonda() {
+function manejoDeRonda() {  
   
-  
+  mostrarResultado()
   comprobarVidaJugador()
   desaparecerSectionPokebolas()
   asignarBackPokemon()
   aparecerBotonesPPT()
-  mezclarEleccionMaquina()  
+  mezclarEleccionMaquina() 
   aparecerPokemon()
-  
+  pelea()
+  guardarPokedex()
 
 }
 
@@ -202,15 +215,6 @@ function aparecerBotonesPPT(){
 
 }
 
-function comprobarPelea(){
-  if(eleccionJugador.length === 1 && eleccionMaquina.length === 1){
-  pelea()
-  }
-  else{
-    reiniciarElecciones()
-  }
-}
-
 function bajarVidaMaquina(){
   if(rondaDeVida === 1){   
     $vidaTotal.style.opacity = 0
@@ -230,7 +234,6 @@ function bajarVidaMaquina(){
 function reiniciarElecciones(){
   eleccionJugador = []
   eleccionMaquina = []
-  manejoDeRonda()
   
 }
 
@@ -239,18 +242,22 @@ function aparecerPokemon(){
   setTimeout(() => {  
   if(victoria === 1){    
     $pikachu.className = ''
+    pokemonsEnPokedex.push('pikachu')
   }
   else if(victoria === 4){   
     $pikachu.className = 'oculto' 
     $gengar.className = ''
+    pokemonsEnPokedex.push('gengar')
   }
   else if(victoria === 7){
     $gengar.className = 'oculto'
     $mew.className = ''
+    pokemonsEnPokedex.push('mew')
   }
   else if(victoria === 10){    
     $mew.className = 'oculto'
     $mewtwo.className = ''
+    pokemonsEnPokedex.push('mewtwo')
   }
   else if(victoria === 13){
     alert('Ganaste el juego')
@@ -270,3 +277,14 @@ function reiniciarJuegoPokemon(){
   window.location.reload()
 
 }
+
+function mostrarResultadoMaquina(){
+  $resultadoMaquina.textContent = eleccionMaquina
+}
+
+function mostrarResultado(){
+  let $parrafoSeleccion = document.querySelector('#parrafo--seleccion')
+  $parrafoSeleccion.className = ''
+}
+
+

@@ -1,0 +1,14 @@
+nav{
+    font-size: 1.2em;
+    overflow: hidden;
+    padding: 20px;
+
+        a{
+            text-decoration: none;
+
+            &:hover{
+                color: red;
+                 transform: scale(1.2);
+            }
+        }
+    }

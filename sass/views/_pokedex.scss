@@ -1,0 +1,118 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4, 250px);
+    justify-items: center;
+    background-image: url('https://drive.google.com/file/d/1C3JcCTEFL87s32YC1941xcgz5d0UuvxL/view?usp=sharing');
+    
+
+    img{
+        grid-column: 2/3;
+        grid-row: 2/3;
+        height: 500px;
+    }
+
+    picture{
+        img{
+            height: 200px;
+            align-items: center;
+        }
+
+        height: 200px;
+        width: 200px;
+        grid-column: 2/3;
+        grid-row: 2/3;
+        align-items: center
+    }
+
+    p{
+        width: 200px;
+        text-align: center;
+        grid-column: 2/3;
+        grid-row: 3/4;
+        height: 271px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+    #next{
+                grid-column: 3/4;
+                grid-row: 3/4;                
+                min-width: 130px;
+                height: 40px;
+                color: #fff;
+                padding: 5px 10px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                position: relative;
+                outline: none;
+                border-radius: 5px;
+                z-index: 0;
+                background: #fff;
+                overflow: hidden;
+                border: 2px solid #4433ff;
+                color: #4433ff;
+              }
+              #next:hover {
+                color: #fff;
+              }
+              #next:hover:after {
+                height: 100%;
+              }
+              #next:after {
+                content: "";
+                position: absolute;
+                z-index: -1;
+                transition: all 0.3s ease;
+                left: 0;
+                bottom: 0;
+                height: 0;
+                width: 100%;
+                background: #4433ff;
+              }
+
+          #back{
+            
+                grid-column: 1/2;
+                grid-row: 3/4;            
+                
+                    min-width: 130px;
+                    height: 40px;
+                    color: #fff;
+                    padding: 5px 10px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    position: relative;
+                    display: inline-block;
+                    outline: none;
+                    border-radius: 5px;
+                    z-index: 0;
+                    background: #fff;
+                    overflow: hidden;
+                    border: 2px solid #d90429;
+                    color: #d90429;
+                  }
+                  #back:hover {
+                    color: #fff;
+                  }
+                  #back:hover:after {
+                    height: 100%;
+                  }
+                  #back:after {
+                    content: "";
+                    position: absolute;
+                    z-index: -1;
+                    transition: all 0.3s ease;
+                    left: 0;
+                    bottom: 0;
+                    height: 0;
+                    width: 100%;
+                    background: #d90429;
+                  }
+}
+
+
+

@@ -225,6 +225,11 @@
     transition: 500ms;
     }
 
+    p{
+      grid-row: 1/2;
+      grid-column: 5/6 ;
+    }
+
 }
 
 
