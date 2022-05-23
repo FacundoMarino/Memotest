@@ -163,8 +163,7 @@ function verificarRondaGanada(){
     }
 }
 
-function comprobarJuegosGanadas(juegosGanados){
-    if(juegosGanados === 2){
-        mostrarJuegoPokemon()
-    }
+function comprobarJuegosGanadas(juegosGanados){    
+    juegosGanados === 2 && mostrarJuegoPokemon()
+    
 }

@@ -5,8 +5,13 @@ const pikachuStorage = localStorage.getItem('Pikachu')
 const mewStorage = localStorage.getItem('Mew')
 const mewtwoStorage = localStorage.getItem('Mewtwo')
 const gengarStorage = localStorage.getItem('Gengar')
+const nombrePokedex = document.getElementById('nombre--pokedex')
+const apellidoPokedex = document.getElementById('apellido--pokedex')
+const edadPokedex = document.getElementById('edad--pokedex')
 
+const pokemonSpread = ['pikachu', 'gengar', 'mew', 'mewtwo']
 
+ 
 class Pokemon{
     constructor(numero, nombre, descripcion, imagen){
       this.numero = numero  
@@ -17,11 +22,11 @@ class Pokemon{
   }
 
 const imagenesPokemon = {
-pikachu: 'https://img.pokemondb.net/sprites/heartgold-soulsilver/normal/pikachu.png',
-gengar: 'https://img.pokemondb.net/sprites/x-y/normal/gengar.png',
-mew: 'https://img.pokemondb.net/sprites/x-y/normal/mew.png',
-mewtwo: 'https://img.pokemondb.net/sprites/black-white/normal/mewtwo.png',
-squirtle: 'Tras nacer, su espalda se hincha y endurece como una concha. Echa potente espuma por la boca.'
+    pikachu_img: 'https://img.pokemondb.net/sprites/heartgold-soulsilver/normal/pikachu.png',
+    gengar_img: 'https://img.pokemondb.net/sprites/x-y/normal/gengar.png',
+    mew_img: 'https://img.pokemondb.net/sprites/x-y/normal/mew.png',
+    mewtwo_img: 'https://img.pokemondb.net/sprites/black-white/normal/mewtwo.png',
+    squirtle: 'Tras nacer, su espalda se hincha y endurece como una concha. Echa potente espuma por la boca.'
 }
 
 const descripcionPokemon = {
@@ -32,10 +37,12 @@ mewtwo: 'Fue creado por un científico tras años de horribles experimentos de i
 squirtle: 'Tras nacer, su espalda se hincha y endurece como una concha. Echa potente espuma por la boca.',
 }
 
-const pikachu = new Pokemon(25, 'pikachu',  descripcionPokemon.pikachu, imagenesPokemon.pikachu)
-const gengar = new Pokemon(94, 'gengar', descripcionPokemon.gengar, imagenesPokemon.gengar)
-const mew = new Pokemon(151, 'mew', descripcionPokemon.mew, imagenesPokemon.mew)
-const mewtwo = new Pokemon(150, 'mewtwo', descripcionPokemon.mewtwo, imagenesPokemon.mewtwo)
+let {pikachu_img, gengar_img, mew_img, mewtwo_img} = imagenesPokemon
+
+const pikachu = new Pokemon(25, 'pikachu',  descripcionPokemon.pikachu, 'pikachu_img')
+const gengar = new Pokemon(94, 'gengar', descripcionPokemon.gengar, 'gengar_img')
+const mew = new Pokemon(151, 'mew', descripcionPokemon.mew, 'mew_img')
+const mewtwo = new Pokemon(150, 'mewtwo', descripcionPokemon.mewtwo, 'mewtwo_img')
 const squirtle = new Pokemon(7, 'squirtle', descripcionPokemon.squirtle)
 
 
@@ -67,22 +74,22 @@ function mostrarDescripcion(){
   if(idPokemon === 0){
     let pokemonStorage = JSON.parse(pikachuStorage)
     $pDescripcion.textContent = pokemonStorage.descripcion
-    $imgSrc.src = imagenesPokemon.pikachu
+    $imgSrc.src = pikachu_img
   }
     else if(idPokemon === 1){
     let pokemonStorage = JSON.parse(gengarStorage)
     $pDescripcion.textContent = pokemonStorage.descripcion  
-    $imgSrc.src = imagenesPokemon.gengar
+    $imgSrc.src = gengar_img
   }
     else if(idPokemon === 2){
     let pokemonStorage = JSON.parse(mewStorage)
     $pDescripcion.textContent = pokemonStorage.descripcion  
-    $imgSrc.src = imagenesPokemon.mew
+    $imgSrc.src = mew_img
   }
     else if(idPokemon === 3){
     let pokemonStorage = JSON.parse(mewtwoStorage)
     $pDescripcion.textContent = pokemonStorage.descripcion  
-    $imgSrc.src = imagenesPokemon.mewtwo
+    $imgSrc.src = mewtwo_img
   }
   else{
     idPokemon = 0
@@ -101,4 +108,13 @@ document.querySelector('#back').onclick = function(){
   mostrarDescripcion()
 
 }
-mostrarDescripcion()
+
+idPokemon < 0 ? idPokemon = 0 : mostrarDescripcion()
+
+
+/* SPREAD fuera del proyecto */
+
+let objetosDePokemon ={
+        ...pokemonSpread
+} 
+  console.log(objetosDePokemon)

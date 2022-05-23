@@ -113,9 +113,10 @@ function mezclarCartas(){
 }
 
 
-function asignarJugador(){
+function asignarJugador(){    
     let PLAYER1 = prompt('Ingrese su nombre')
     document.querySelector('.player--1').textContent = PLAYER1
+    comprobarNombreJugador(PLAYER1)
 }
 
 function tiempo(){
@@ -143,6 +144,12 @@ let victoria = document.querySelectorAll('.correcto')
     }  
     
 }
+
+function comprobarNombreJugador(PLAYER1){
+PLAYER1 || asignarJugador()
+
+}
+
 
 /*Reiniciar juego*/
 
