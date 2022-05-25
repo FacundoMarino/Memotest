@@ -9,7 +9,7 @@ const nombrePokedex = document.getElementById('nombre--pokedex')
 const apellidoPokedex = document.getElementById('apellido--pokedex')
 const edadPokedex = document.getElementById('edad--pokedex')
 
-const pokemonSpread = ['pikachu', 'gengar', 'mew', 'mewtwo']
+
 
  
 class Pokemon{
@@ -114,7 +114,9 @@ idPokemon < 0 ? idPokemon = 0 : mostrarDescripcion()
 
 /* SPREAD fuera del proyecto */
 
-let objetosDePokemon ={
-        ...pokemonSpread
-} 
-  console.log(objetosDePokemon)
+// const pokemonSpread = ['pikachu', 'gengar', 'mew', 'mewtwo']
+
+// let objetosDePokemon ={
+//         ...pokemonSpread
+// } 
+//   console.log(objetosDePokemon)

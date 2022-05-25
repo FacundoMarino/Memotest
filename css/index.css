@@ -82,7 +82,7 @@ nav {
 #fila--cartas2 {
   display: none; }
 
-div {
+.div--fondo {
   background-color: black;
   height: 100px;
   width: 100px;
@@ -185,7 +185,7 @@ div {
 #fila--cartas2 {
   display: none; }
 
-div {
+.div--fondo {
   background-color: black;
   height: 100px;
   width: 100px;

@@ -1,4 +1,4 @@
-/*VARIABLES*/
+  /*VARIABLES*/
 
 let $vidaTotal = document.querySelector('#vida--total')
 let $vidaMedia = document.querySelector('#vida--media')
@@ -268,7 +268,11 @@ function aparecerPokemon(){
 
 function comprobarVidaJugador(){
   if(vidaJugador <= -5){
-    alert('Ups perdiste todas las vidas, volvé a intentarlo')
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Perdiste todas tus vidas',      
+    })
     reiniciarJuegoPokemon()
   }
 }

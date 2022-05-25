@@ -137,8 +137,12 @@ function comprobarBotonStart(){
 function comprobarVictoria(){
 let victoria = document.querySelectorAll('.correcto')
     if(victoria.length === 6){
-        alert('Ganaste el Juego')
-        mostrarBotonVolverAJugar()
+        Swal.fire({
+            icon: 'success',
+            title: '¡Felicidades!',
+            text: '¡Ganaste el juego!',            
+          })
+         mostrarBotonVolverAJugar()
         juegosGanados++
         comprobarJuegosGanadas(juegosGanados)        
     }  
