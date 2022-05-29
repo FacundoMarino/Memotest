@@ -372,6 +372,9 @@ nav {
   #batalla p {
     grid-row: 1/2;
     grid-column: 5/6; }
+  #batalla #parrafo--batalla {
+    grid-row: 1/2;
+    grid-column: 2/3; }
 
 .container {
   display: grid;

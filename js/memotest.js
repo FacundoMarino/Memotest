@@ -3,10 +3,10 @@ let comprobar = []
 let numerosEnCartas = [1,1,2,2,3,3]
 let start = false
 let juegosGanados = 0
+let PLAYER1 = inputJugador()
 
 
 
-asignarJugador()
 
 
 /*Interacción Clicks*/
@@ -113,10 +113,30 @@ function mezclarCartas(){
 }
 
 
-function asignarJugador(){    
-    let PLAYER1 = prompt('Ingrese su nombre')
-    document.querySelector('.player--1').textContent = PLAYER1
-    comprobarNombreJugador(PLAYER1)
+function inputJugador(){
+    Swal.fire({
+        title: "Tu nombre",
+        input: "text",
+        showCancelButton: true,
+        confirmButtonText: "Guardar",
+        cancelButtonText: "Cancelar",
+        inputValidator: nombre => {
+            // Si el valor es válido, debes regresar undefined. Si no, una cadena
+            if (!nombre) {
+                return "Por favor escribe tu nombre";
+            } else {
+                return undefined;
+            }
+        }
+    })
+    .then(resultado => {
+        if (resultado.value) {
+            let nombre = resultado.value;
+            let $nombrePlayer = document.querySelector('.player--1')
+            $nombrePlayer.innerText = nombre
+        }
+    });
+    
 }
 
 function tiempo(){
@@ -148,12 +168,6 @@ let victoria = document.querySelectorAll('.correcto')
     }  
     
 }
-
-function comprobarNombreJugador(PLAYER1){
-PLAYER1 || asignarJugador()
-
-}
-
 
 /*Reiniciar juego*/
 

@@ -1,5 +1,6 @@
   /*VARIABLES*/
 
+let $resultadoBatalla = document.querySelector('#parrafo--batalla')
 let $vidaTotal = document.querySelector('#vida--total')
 let $vidaMedia = document.querySelector('#vida--media')
 let $vidaBaja = document.querySelector('#vida--baja')
@@ -59,47 +60,52 @@ document.querySelector('#squirtle').onclick = function(){
 
 /*Funciones */
 
+
 function pelea(){
   if(eleccionMaquina[0] === 'piedra' && eleccionJugador[0] === 'papel'){
     victoria++
     rondaDeVida++
     mostrarResultadoMaquina()
     bajarVidaMaquina()
+    document.getElementById('resultado--batalla').innerText = 'Ganaste'
+
   }
   else if(eleccionMaquina[0] === 'papel' && eleccionJugador[0] === 'tijera'){
     victoria++
     rondaDeVida++
     mostrarResultadoMaquina()   
     bajarVidaMaquina()
+    document.getElementById('resultado--batalla').innerText = 'Ganaste'
+
   }
   else if(eleccionMaquina[0] === 'tijera' && eleccionJugador[0] === 'piedra'){
     victoria++
     rondaDeVida++
     mostrarResultadoMaquina()  
     bajarVidaMaquina()
-     
+    document.getElementById('resultado--batalla').innerText = 'Ganaste'
   }
   else if(eleccionMaquina[0] === eleccionJugador[0]){    
     mostrarResultadoMaquina()
-    alert('Empate')
+    document.getElementById('resultado--batalla').innerText = 'Empate'
     
   }
   else if(eleccionMaquina[0] === 'papel' && eleccionJugador[0] === 'piedra'){
     vidaJugador--
     mostrarResultadoMaquina()
-    alert('Ganó la Máquina')
+    document.getElementById('resultado--batalla').innerText = 'Ganó la Máquina'
           
   }
   else if(eleccionMaquina[0] === 'tijera' && eleccionJugador[0] === 'papel'){
     vidaJugador--
     mostrarResultadoMaquina()
-    alert('Ganó la Máquina')
+    document.getElementById('resultado--batalla').innerText = 'Ganó la Máquina'
    
   }
   else if(eleccionMaquina[0] === 'piedra' && eleccionJugador[0] === 'tijera'){
     vidaJugador--
     mostrarResultadoMaquina()
-    alert('Ganó la Máquina')
+    document.getElementById('resultado--batalla').innerText = 'Ganó la Máquina'
     
   } 
 }
@@ -202,7 +208,7 @@ else if(pokemonElegido === 'bulbasaur'){
   let $backCharmander = document.querySelector('#back--bulbasaur')
   $backCharmander.className = ''
 }
-}, 1500)
+}, 1200)
 }
 
 
@@ -211,7 +217,7 @@ function aparecerBotonesPPT(){
   document.querySelector('#piedra').className = ''
   document.querySelector('#papel').className = ''
   document.querySelector('#tijera').className = ''
-}, 1500)
+}, 1200)
 
 }
 
@@ -260,8 +266,11 @@ function aparecerPokemon(){
     pokemonsEnPokedex.push('mewtwo')
   }
   else if(victoria === 13){
-    alert('Ganaste el juego')
-    bata
+    Swal.fire({
+      icon: 'success',
+      title: '¡Felicidades!',
+      text: '¡Ganaste el juego!',            
+    })
   }
 }, 1000)
 }
@@ -278,7 +287,7 @@ function comprobarVidaJugador(){
 }
 
 function reiniciarJuegoPokemon(){
-  window.location.reload()
+  setTimeout(() => {window.location.reload()}, 2000)
 
 }
 
@@ -287,8 +296,12 @@ function mostrarResultadoMaquina(){
 }
 
 function mostrarResultado(){
-  let $parrafoSeleccion = document.querySelector('#parrafo--seleccion')
-  $parrafoSeleccion.className = ''
+  setTimeout(() => {
+    let $parrafoSeleccion = document.querySelector('#parrafo--seleccion')
+    $parrafoSeleccion.className = ''
+    $resultadoBatalla.className = ''
+  
+  },1500)
 }
 
 
