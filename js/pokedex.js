@@ -111,12 +111,3 @@ document.querySelector('#back').onclick = function(){
 
 idPokemon < 0 ? idPokemon = 0 : mostrarDescripcion()
 
-
-/* SPREAD fuera del proyecto */
-
-// const pokemonSpread = ['pikachu', 'gengar', 'mew', 'mewtwo']
-
-// let objetosDePokemon ={
-//         ...pokemonSpread
-// } 
-//   console.log(objetosDePokemon)
