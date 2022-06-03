@@ -167,7 +167,9 @@ function aparecer(value){
 
 function mostrarJuegoPokemon(){
   let $section = document.querySelector('#pokemon')
+  let $pokedex = document.querySelector('#nav--pokedex')
   $section.className = 'flex'
+  $pokedex.className = ''
 }
 
 

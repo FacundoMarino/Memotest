@@ -10,21 +10,31 @@
     <title>Pokedex</title>
 </head>
 <body>
+
     <nav class="flex">
         <a href="index.html">Juegos</a>
         <a href="pokedex.html">Pokedex</a>
-
     </nav>
 
     <section>
-        <div class="">
+        <div class="container">
             <h1>Pokedex Nacional</h1>
         </div>
+    
+        <div class="container">      
+          <div class="row">
+              <nav aria-label="Page navigation example">
+                <ul class="pagination" id="paginador"></ul>
+              </nav>
+          </div>
+        </div>
+      
 
     <div class="container">
-        <div id="pokedexNacional" class="list-group col"></div>
+      
+        <div id="pokedexNacional" class="list-group col">
               
-        <div class="card mb-3" style="width: 400px; height: 900;">
+          <div class="card mb-3" style="width: 400px; height: 900;">
             <div class="row g-0">
               <div class="col-md-4">
                 <img  id="pokemon-imagen" src="" class="img-fluid rounded-start" alt="..." style="height: 40rem;">
@@ -35,8 +45,8 @@
                   <strong>Tipos</strong>
                   <div id="tipos">
                       
-                            
-                </div>
+                  </div>    
+                 </div>
                 </div>
               </div>
             </div>

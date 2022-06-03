@@ -1,10 +1,17 @@
 
 inicar()
 
+
+
 function cargarPokemon(name){
     fetch(`https://pokeapi.co/api/v2/pokemon/${name}`).then((resp) => resp.json()).then((pokemon) => 
     mostrarPokemon(pokemon))
 
+}
+
+function cargarPokemones(offset = 0){
+    const pokemonsPorPagina = 7
+    return fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${pokemonsPorPagina}`)
 }
 
 
@@ -54,9 +61,12 @@ function mostrarListaDePokemon(results){
 
     })
     });
-
-
+    
 }
+
+
+
+
 
 
 function inicar(){

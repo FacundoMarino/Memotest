@@ -140,7 +140,11 @@ function ocultarRonda(){
 }
 
 function perder(){
-    alert('UPS te confundiste')
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: '¡Te confundiste!',      
+      })
     mostrarStart()
     reiniciarJuego()
 }
@@ -155,7 +159,11 @@ function reiniciarJuego(){
 
 function verificarRondaGanada(){
     if(ronda === 6){
-        alert('¡Felicitaciones ganaste el Juego!')
+        Swal.fire({
+            icon: 'success',
+            title: '¡Felicidades!',
+            text: '¡Ganaste el juego!',            
+          })
         reiniciarJuego()
         juegosGanados++
         comprobarJuegosGanadas(juegosGanados)
